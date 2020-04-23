@@ -1,0 +1,10 @@
+image: bagalvitthal/ub_sleeper:latest
+manifests:
+  - image: bagalvitthal/ub_sleeper:amd64
+    platform:
+      architecture: amd64
+      os: linux
+  - image: bagalvitthal/ub_sleeper:s390x
+    platform:
+      architecture: s390x
+      os: linux
