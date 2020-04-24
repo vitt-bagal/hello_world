@@ -1,6 +1,6 @@
 ARG ARCH=""
 
-FROM ${ARCH}/alpine
+FROM s390x/alpine
 
 #COPY /usr/bin/qemu-${ARCH}-static* /usr/bin/
 
@@ -8,5 +8,5 @@ FROM ${ARCH}/alpine
  RUN apk add --no-cache --update g++ gcc libgcc libstdc++ linux-headers make python
 
 # Setup node envs
-RUN echo "Hello world from ${ARCH}"
+RUN echo "Hello world from s390x"
 
