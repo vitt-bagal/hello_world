@@ -1,17 +1,19 @@
 diff --git a/jobs/config.json b/jobs/config.json
-index 4602880fd7..4a6306e673 100644
+index 4602880fd7..484cdcf5af 100644
 --- a/jobs/config.json
 +++ b/jobs/config.json
-@@ -32,4 +32,9 @@
+@@ -31,5 +31,11 @@
+     "sigOwners": [
        "sig-testing"
      ]
-   }
++  },
 +  "kubernetes": {
-+         "args": [
-+"export ETCD_UNSUPPORTED_ARCH=s390x && sed -i 's/--timeout=120/--timeout=300/' ./hack/make-rules/test.sh && sed -i 's/export KUBE_RACE/#export KUBE_RACE/'
- ./hack/jenkins/test-dockerized.sh && sed -i 's/WORKSPACE/PWD/' ./hack/jenkins/test-dockerized.sh && sed -i '/install-etcd/d' ./hack/jenkins/test-dockerized.sh && se
-d -i 's|k8s.gcr.io/serve_hostname|gcr.io/kubernetes-e2e-test-images/serve-hostname-s390x:1.2|' test/fixtures/doc-yaml/admin/limitrange/valid-pod.yaml && sed -i 's/ex
-ceeded/or context cancellation/' test/cmd/request-timeout.sh &&  ./hack/jenkins/test-dockerized.sh"],
-+   "scenario": "execute"
-+  }
++    "args": [
++      "sed -i 's/--timeout=120/--timeout=300/' ./hack/make-rules/test.sh && sed -i 's/export KUBE_RACE/#export KUBE_RACE/' ./hack/jenkins/test-dockerized.
+sh && sed -i 's/WORKSPACE/PWD/' ./hack/jenkins/test-dockerized.sh && sed -i '/install-etcd/d' ./hack/jenkins/test-dockerized.sh && sed -i 's|k8s.gcr.io/serve_hostnam
+e|gcr.io/kubernetes-e2e-test-images/serve-hostname-s390x:1.2|' ./test/fixtures/doc-yaml/admin/limitrange/valid-pod.yaml && sed -i 's/exceeded/or context cancellation
+/' ./test/cmd/request-timeout.sh"
++    ],
++    "scenario": "execute"
+   }
  }
